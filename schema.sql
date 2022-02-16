@@ -54,7 +54,6 @@ CREATE TABLE specializations(
   species_id integer NOT NULL,
   FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY (species_id) REFERENCES species (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-  PRIMARY KEY (vets_id, species_id)
 )
 
 -- There is a many-to-many relationship between the tables animals and vets: 
@@ -66,5 +65,4 @@ CREATE TABLE visits(
   date_of_visit date,
   FOREIGN KEY (vets_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY (animals_id) REFERENCES animals (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-  PRIMARY KEY (vets_id, animals_id)
 )
