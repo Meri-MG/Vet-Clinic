@@ -40,8 +40,18 @@ CREATE TABLE invoice_items (
   FOREIGN KEY (treatment_id) REFERENCES treatments (id) ON DELETE RESTRICT ON UPDATE CASCADE
 )
 
+CREATE TABLE medical_histories_and_treatments (
+  medical_history_id integer NOT NULL,
+	treatment_id integer NOT NULL,
+	FOREIGN KEY (medical_history_id) REFERENCES medical_histories (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+	FOREIGN KEY (treatment_id) REFERENCES treatments (id) ON DELETE RESTRICT ON UPDATE CASCADE
+)
+
 -- CREATE FK indexes
 CREATE INDEX medical_histories_patient_index ON medical_histories(patient_id);
 CREATE INDEX invoices_medical_history_index ON invoices (medical_history_id);
 CREATE INDEX invoice_items_invoice_index ON invoice_items (invoice_id);
 CREATE INDEX invoice_items_treatment_index ON invoice_items (treatment_id);
+CREATE INDEX medical_hist_and_treat_medical_history_index ON medical_histories_and_treatments (medical_history_id);
+CREATE INDEX medical_hist_and_treat_treatment_index ON medical_histories_and_treatments (treatment_id);
+
