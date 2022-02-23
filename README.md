@@ -1,6 +1,8 @@
 # Vet-Clinic
 
-> In this project is used a relational database to create the initial data structure for a vet clinic. There is a table to store animals' information, insert some data into it, and query it.
+> In this project is used a relational database to create the data structure for a vet clinic. A multiple SQL queries where answered based on this database and was analyzed on its performance as well.
+
+![schema-diagram](https://raw.githubusercontent.com/Meri-MG/Vet-Clinic/dev/vet_clinic_diagram.png)
 
 
 ## Getting Started
